@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Dades del club:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center" *ngIf="club">
+            <img class="escut img-fluid"
+                 [src]="club.escut" 
+                 alt="escut">
+        </div>
+        <div class="col-md-8 text-center mt-4" *ngIf="club">
+            <p><b>Nom Club:</b> {{ club.nom_club }}</p>
+            <p><b>Ciutat:</b> {{ club.ciutat }}</p>
+            <p><b>Estadi:</b> {{ club.estadi }}</p>
+            <p><b>Fundat:</b> {{ club.founded }}</p>
+            <p><b>Telefon:</b> {{ club.telefon }}</p>
+            <p><b>Email:</b> {{ club.email }}</p>
+            <p><b>Entrenador:</b><span style="color: gold;"> <a class="entrenador" routerLink="/entrenador"> {{ manager }}</a></span></p>
+            <p><b>President:</b><span style="color: gold;"> {{ usuari.nom }} {{ usuari.cognom }}</span></p>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <h1 class="text-center">Equip, Jugadors:</h1>
+            <hr>
+        </div>
+    <div class="row">
+        <div class="col text-center mt-4">
+            <div class="table-responsive">
+                <table class="table table-bordered bg-light">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Edat</th>
+                            <th>Pais</th>
+                            <th>Força</th>
+                            <th>Posicio</th>
+                            <th>Valor de mercat</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let jugador of jugadors">
+                            <td>
+                                {{ jugador.nom }} {{ jugador.cognom }}
+                            </td>
+                            <td>
+                                {{ jugador.edat }}
+                            </td>
+                            <td>
+                                {{ jugador.pais }}
+                            </td>
+                            <td>
+                                {{ jugador.forza }}
+                            </td>
+                            <td>
+                                {{ jugador.posicio }}
+                            </td>
+                            <td>
+                                {{ jugador.valor_mercat }}
+                            </td>
+                            <td><a [routerLink]="['/jugador', jugador.id]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <nav aria-label="Page navigation float-start">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.page-1)">Previous</a></li>
+                  <li class="page-item" *ngFor="let btn of buton"><a class="page-link" (click)="numberPage(btn+1)">{{ btn+1 }}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.page+1)">Next</a></li>
+                </ul>
+              </nav>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col">
+            <button class="btn btn-primary float-end" (click)="nouJugador()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg> Promocio Cantera</button>
+        </div>
+    </div>
+</div>

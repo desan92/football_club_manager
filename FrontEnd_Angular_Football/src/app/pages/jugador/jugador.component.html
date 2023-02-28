@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Dades del Jugador:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-left mt-4" *ngIf="jugador">
+            <p><b>Nom:</b></p>
+            <input type="text" class="form-control" placeholder="Nom del jugador" [(ngModel)]="jugador.nom">
+            <p><b>Cognom:</b></p>
+            <input type="text" class="form-control" placeholder="Cognom del jugador" [(ngModel)]="jugador.cognom">
+            <p><b>Edat:</b></p>
+            <input type="text" class="form-control" placeholder="Edat del jugador" [(ngModel)]="jugador.edat">
+            <p><b>Pais:</b></p>
+            <input type="text" class="form-control" placeholder="Nom del pais" [(ngModel)]="jugador.pais">
+            <select class="form-select mt-4" [(ngModel)]="jugador.posicio">
+                <option *ngFor="let posicio of posicions" [value]="posicio">{{ posicio }}</option>
+            </select>
+            <a (click)="actualitzarJugador()"  class="btn btn-primary mt-3 float-end">Guardar canvis</a>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

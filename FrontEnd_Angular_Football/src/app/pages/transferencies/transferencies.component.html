@@ -1,0 +1,117 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row mt-4" *ngIf="transferencies">
+        <div class="col">
+            <h1 class="text-center">Transferencies Jugadors:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row" *ngIf="transferencies">
+        <div class="col">
+            <table class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Club from</th>
+                        <th>Club to</th>
+                        <th>contracte creat</th>
+                        <th>Durada minima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transferencia of transferencies">
+                        <td>
+                            {{ transferencia.jugador_id.nom }} {{ transferencia.jugador_id.cognom }}
+                        </td>
+                        <td *ngIf="transferencia.club_from_id">
+                            {{ transferencia.club_from_id.nom_club }}
+                        </td>
+                        <td *ngIf="!transferencia.club_from_id">
+                            Lliure
+                        </td>
+                        <td *ngIf="transferencia.club_to_id">
+                            {{ transferencia.club_to_id.nom_club }}
+                        </td>
+                        <td *ngIf="!transferencia.club_to_id">
+                            Lliure
+                        </td>
+                        <td>
+                            {{ transferencia.created_contract }}
+                        </td>
+                        <td>
+                            {{ transferencia.contract_min }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="transferencies">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.page-1, 'jugador')">Previous</a></li>
+                  <li class="page-item" *ngFor="let btn of buton"><a class="page-link" (click)="numberPage(btn+1, 'jugador' )">{{ btn+1 }}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.page+1, 'jugador')">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="row mt-4" *ngIf="transferenciesEnt">
+        <div class="col">
+            <h1 class="text-center">Transferencies Entrenadors:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row" *ngIf="transferenciesEnt">
+        <div class="col">
+            <table class="table table-bordered bg-light">
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Club from</th>
+                        <th>Club to</th>
+                        <th>contracte creat</th>
+                        <th>Durada minima</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let transferencia of transferenciesEnt">
+                        <td>
+                            {{ transferencia.entrenador_id.nom }} {{ transferencia.entrenador_id.cognom }}
+                        </td>
+                        <td *ngIf="transferencia.club_from_id">
+                            {{ transferencia.club_from_id.nom_club }}
+                        </td>
+                        <td *ngIf="!transferencia.club_from_id">
+                            Lliure
+                        </td>
+                        <td *ngIf="transferencia.club_to_id">
+                            {{ transferencia.club_to_id.nom_club }}
+                        </td>
+                        <td *ngIf="!transferencia.club_to_id">
+                            Lliure
+                        </td>
+                        <td>
+                            {{ transferencia.created_contract }}
+                        </td>
+                        <td>
+                            {{ transferencia.contract_min }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="transferenciesEnt">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.pageEnt-1, 'entrenador')">Previous</a></li>
+                  <li class="page-item" *ngFor="let btn of butonEnt"><a class="page-link" (click)="numberPage(btn+1, 'entrenador')">{{ btn+1 }}</a></li>
+                  <li class="page-item"><a class="page-link" (click)="numberPage(this.pageEnt+1, 'entrenador')">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

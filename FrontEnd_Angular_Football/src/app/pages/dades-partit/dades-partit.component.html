@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Dades del partit:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-xs-4 col-sm-4">
+            <div class="text-center">
+                <h3><b>{{ local.nom_club }}</b></h3>
+            </div>
+            <div class="d-flex align-self-center justify-content-center">
+                <p class="resultat">{{ golsLocals }}</p>
+            </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 d-flex align-self-center justify-content-center">
+            <img class="img-fluid imatgeclub" src="../../../assets/img/pngaaa.com-719755.png" alt="vs">
+        </div>
+        <div class="col-xs-4 col-sm-4">
+            <div class="text-center">
+                <h3><b>{{ visitant.nom_club }}</b></h3>
+            </div>
+            <div class="d-flex align-self-center justify-content-center">
+                <p class="resultat">{{ golsVisitants }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 mt-5 mb-5">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <h5 class="card-title p-3 text-center text-success"><b>Equip Local: {{ local.nom_club }}</b></h5>
+                  <li *ngFor="let stat of statLocal" class="list-group-item">
+                    <div *ngIf="local.id === stat.club_id">
+                        <p><b>{{ stat.jugador.nom }} {{ stat.jugador.cognom }} </b>- <span>{{ stat.esdeveniment }}</span></p>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 mt-5 mb-5">
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                    <h5 class="card-title p-3 text-center text-success"><b>Equip Visitant: {{ visitant.nom_club }}</b></h5>
+                  <li *ngFor="let stat of statVisitant" class="list-group-item">
+                    <div *ngIf="visitant.id === stat.club_id">
+                        <p><b>{{ stat.jugador.nom }} {{ stat.jugador.cognom }} </b>- <span>{{ stat.esdeveniment }}</span></p>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

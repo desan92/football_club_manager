@@ -1,0 +1,36 @@
+
+/*
+* el que fem al row es dir-li que el seu height es el 100% del view port.
+*/
+.rowTitle{
+  min-height: 15vh;
+}
+
+.title {
+  text-align: left; 
+  font-family: Comic Sans MS; 
+  font-weight:bold; 
+  font-size: 50px; 
+  color: #56C644; 
+  text-shadow: -1px 0 #414D68, 0 1px #414D68, 1px 0 #414D68, 0 -1px #414D68, -2px 2px 0 #414D68, 2px 2px 0 #414D68, 1px 1px #414D68, 2px 2px #414D68, 3px 3px #414D68, 4px 4px #414D68, 5px 5px #414D68;
+}
+
+.rowForm{
+  position: relative;
+  min-height: 85vh;
+  width: 100%;
+}
+
+.image-logo{
+  margin-bottom:-90px;
+  margin-left:calc(50% - 125px); 
+  height: 250px;
+  width: 250px;
+}
+
+form {
+  padding: 60px;
+  background-color: #56C644;
+  border: 1px solid #2A871C;
+  border-radius: 4px;
+}

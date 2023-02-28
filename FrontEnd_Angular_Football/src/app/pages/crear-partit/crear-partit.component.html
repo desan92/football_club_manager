@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row mt-5">
+        <div class="col">
+            <h1 class="text-center">Crear un nou partit:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-4 text-center">
+            <img class="img-fluid text-center imatgeclub" [src]="localclub.escut" alt="escut">
+            <h4 class="text-center mt-3">{{ localclub.nom_club }}</h4>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="img-fluid text-center imatgeclub" src="../../../assets/img/pngaaa.com-719755.png" alt="vs">
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="img-fluid text-center imatgeclub" [src]="visitantclub.escut" alt="escut">
+            <select class="form-select mt-4" [(ngModel)]="visitantclub">
+                <option *ngFor="let club of clubs" [ngValue]="club">{{ club.nom_club }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <button class="btn btn-lg btn-success" (click)="crearPartit()">Crear Partit</button>
+        </div>
+    </div>
+</div>

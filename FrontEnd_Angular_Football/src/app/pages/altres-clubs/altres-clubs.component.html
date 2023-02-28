@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row mt-5">
+        <div class="col">
+            <h1 class="text-center">Clubs Goal League:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center mt-4">
+            <div class="table-responsive">
+                <table class="table table-bordered bg-light">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Estadi</th>
+                            <th>Fundat</th>
+                            <th>Ciutat</th>
+                            <th>Telefon</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let club of clubs">
+                            <td>
+                                <a [routerLink]="['/infoClub', club.id]">{{ club.nom_club }}</a>
+                            </td>
+                            <td>
+                                {{ club.estadi }}
+                            </td>
+                            <td>
+                                {{ club.founded }}
+                            </td>
+                            <td>
+                                {{ club.ciutat }}
+                            </td>
+                            <td>
+                                {{ club.telefon }}
+                            </td>
+                            <td>
+                                {{ club.email }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

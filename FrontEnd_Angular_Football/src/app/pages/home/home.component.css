@@ -1,0 +1,14 @@
+.container{
+    color: aliceblue;
+}
+
+.escut{
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.entrenador{
+    text-decoration: none;
+    color: gold;
+}

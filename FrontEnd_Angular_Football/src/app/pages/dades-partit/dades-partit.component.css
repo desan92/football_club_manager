@@ -1,0 +1,13 @@
+.container{
+    color: aliceblue;
+}
+
+.imatgeclub{
+    width: 200px;
+    height: 200px;
+}
+
+.resultat{
+    font-size: 3rem;
+    font-weight: bold;
+}

@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Dades de l'Entrenador:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-left mt-4" *ngIf="entrenador">
+            <p><b>Nom:</b></p>
+            <input type="text" class="form-control" placeholder="Nombre del Hospital" [(ngModel)]="entrenador.nom">
+            <p><b>Cognom:</b></p>
+            <input type="text" class="form-control" placeholder="Nombre del Hospital" [(ngModel)]="entrenador.cognom">
+            <p><b>Edat:</b></p>
+            <input type="text" class="form-control" placeholder="Nombre del Hospital" [(ngModel)]="entrenador.edat">
+            <p><b>Pais:</b></p>
+            <input type="text" class="form-control" placeholder="Nombre del Hospital" [(ngModel)]="entrenador.pais">
+            <a (click)="actualitzarEntrenador()"  class="btn btn-primary mt-3 float-end">Guardar canvis</a>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

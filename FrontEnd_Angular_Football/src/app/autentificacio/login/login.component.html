@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="rowTitle row">
+        <h3 class="title mt-3 text-center">Goal League</h3>
+    </div>
+    <div class="rowForm row align-items-center">
+        <div class="col">
+            <img class="image-logo" src="../../../assets/img/logo.png">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"><b>Email:</b></label>
+                  <input type="email"
+                         class="form-control"
+                         id="exampleInputEmail1" 
+                         aria-describedby="emailHelp"
+                         placeholder="email"
+                         formControlName="email">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"><b>Contrasenya:</b></label>
+                  <input type="password"
+                         class="form-control" 
+                         id="exampleInputPassword1"
+                         placeholder="contrasenya"
+                         formControlName="password">
+                </div>
+                <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary float-end">Enviar</button>
+                <div class="row">
+                    <div class="col text-danger">
+                        <div *ngIf="campNoValid('email')">
+                            <p *ngIf="this.loginForm.controls['email']?.errors?.['required']!">L'email es obligatori.</p>
+                            <p *ngIf="this.loginForm.controls['email']?.errors?.['email']!">L'email no te el format correcte.</p>
+                        </div>
+                        <div *ngIf="campNoValid('password')">
+                            <p *ngIf="this.loginForm.controls['password']?.errors?.['required']!">La contrasenya es obligatoria.</p>
+                            <p *ngIf="this.loginForm.controls['password']?.errors?.['minlength']!">La contrasenya te menys de 5 caracters</p>
+                        </div>
+                    </div>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+  

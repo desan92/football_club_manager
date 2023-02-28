@@ -1,0 +1,17 @@
+export interface Jugador{
+    id: number,
+    nom: string,
+    cognom: string,
+    edat: number,
+    valor_mercat: number,
+    posicio: string,
+    pais: string,
+    forza: number,
+    gols: number,
+    nombre_partits: number,
+    targetes_grogues: number,
+    targetes_vermelles: number,
+    created_at: string,
+    updated_at: string,
+    club_id: number,
+}

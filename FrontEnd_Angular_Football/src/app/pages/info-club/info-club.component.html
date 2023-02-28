@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Dades del club:</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 text-center" *ngIf="club">
+            <img class="escut img-fluid"
+                 [src]="club.escut" 
+                 alt="escut">
+        </div>
+        <div class="col-md-8 text-center mt-4" *ngIf="club">
+            <p><b>Nom Club:</b> {{ club.nom_club }}</p>
+            <p><b>Ciutat:</b> {{ club.ciutat }}</p>
+            <p><b>Estadi:</b> {{ club.estadi }}</p>
+            <p><b>Fundat:</b> {{ club.founded }}</p>
+            <p><b>Telefon:</b> {{ club.telefon }}</p>
+            <p><b>Email:</b> {{ club.email }}</p>
+            <p><b>Entrenador:</b><span style="color: gold;"> {{ manager }}</span></p>
+        </div>
+    </div>
+</div>
